@@ -18,8 +18,8 @@ public:
 
 protected:
     void recordPath(const std::vector<unsigned> &path);
-    void dfs(SVF::ICFG *icfg, unsigned src, unsigned snk, 
-             std::set<unsigned> &visited, std::vector<unsigned> &path);
+    void dfs(unsigned startNode, unsigned targetNode, SVF::ICFG *icfg,
+             std::set<unsigned> &seenNodes, std::vector<unsigned> &currentPath);
 
     std::stack<unsigned> callStack;
     std::set<unsigned> sources;
